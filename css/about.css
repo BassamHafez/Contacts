@@ -124,7 +124,8 @@ table tbody tr:hover{
 .thead-pink{
     color: black;
     font-size: 1.375rem;
-    background:#083636
+    background:#3a7070;
+    opacity:.8;
 }
 
 /*
@@ -137,6 +138,7 @@ table tbody tr:hover{
  border-radius:0.3125rem;
  border: none;
  font-size: 1.375rem;
+ color: #009688;
 }
 
 #inputSearch{

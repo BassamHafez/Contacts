@@ -20,48 +20,8 @@ var modalBody=document.getElementById('modalBody');
 var formGroup=document.getElementById('formGroup');
 
 
-nightMoodButton.addEventListener("click",changeBodyColor)
 
-function changeBodyColor(){
-    if(mainBody.classList.contains('body')){
-        // sun mood
-        mainBody.classList.replace('body','body-pink')
-        nightMoodButton.innerHTML='<i class="fa-solid fa-sun"></i>'
-        nightMoodButton.classList.replace('nightMood','nightMood-pink')
-        searchButton.classList.replace('search-btn','search-btn-pink')
-        inputSearch.classList.remove('searching')
-        controlsButtons.classList.replace('controls-btns-night','controls-btns-pink')
-        tablePrent.classList.replace('table-night','table-pink')
-        tableHead.classList.replace('thead-night','thead-pink')
-        modalFooter.classList.replace('modal-footer-night','modal-footer-pink')
-        modalBody.classList.replace('modal-body-night','modal-body-pink')
-        formGroup.classList.replace('form-group-night','form-group-pink')
-        addBtn.classList.replace('addBtn-night','addBtn-pink')
-        for(i=0;i<inputs.length;i++){
-            inputs[i].classList.remove('input-night')
-        }
-    }
-      // night mood
-    else{
-        mainBody.classList.replace('body-pink','body')
-        nightMoodButton.innerHTML='<i class="fa-solid fa-moon"></i>'
-        nightMoodButton.classList.replace('nightMood-pink','nightMood')
-        searchButton.classList.replace('search-btn-pink','search-btn')
-        inputSearch.classList.add('searching')
-        controlsButtons.classList.replace('controls-btns-pink','controls-btns-night')
-        tablePrent.classList.replace('table-pink','table-night')
-        tableHead.classList.replace('thead-pink','thead-night')
-        modalFooter.classList.replace('modal-footer-pink','modal-footer-night')
-        modalBody.classList.replace('modal-body-pink','modal-body-night')
-        formGroup.classList.replace('form-group-pink','form-group-night')
-        addBtn.classList.replace('addBtn-pink','addBtn-night')
-        for(i=0;i<inputs.length;i++){
-            inputs[i].classList.add('input-night')
-        }
 
-    }
-
-}
 
 
 if(JSON.parse(localStorage.getItem("data")) !=null){
@@ -81,6 +41,7 @@ addBtn.onclick = function () {
     display();
     clearForm();
     clearValidation();
+    addBtn.innerHTML="Add";
     addBtn.disabled="true";
 }
  
@@ -105,19 +66,13 @@ trs+=   `<tr>
             <td>${allData[i].country}</td>
             <td>${allData[i].phone}</td>
             <td><button onclick="deleteData(${i})" class="btn-table mx-2"><i class="fa-solid fa-user-minus"></i></button> 
-            <button onclick="moveDataToInput(${i})"class="btn-table mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-pen"></i></button></td>
+            <button onclick="moveDataToInput(${i})"class="btn-table mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class='fa-solid fa-pen'></i></button></td>
         </tr>`
 }
 
 document.getElementById("table-body").innerHTML=trs;
 }
 
-function clearForm(){
-    for(var i=0;i<inputs.length;i++){
-        inputs[i].value=null;
-
-    }
-}
 
 function deleteData (index){
 allData.splice(index,1);
@@ -156,6 +111,7 @@ function moveDataToInput(index){
     addBtn.innerHTML="update"
     currentIndex=index;
     }
+
     function updateNewData(){
         var dataUpdated = {
             name: inputName.value,
@@ -257,4 +213,55 @@ function clearValidation(){
         inputPhone.classList.remove("is-valid"); 
   }
  
+}
+
+function changeBodyColor(){
+    if(mainBody.classList.contains('body')){
+        // sun mood
+        mainBody.classList.replace('body','body-pink')
+        nightMoodButton.innerHTML='<i class="fa-solid fa-sun"></i>'
+        nightMoodButton.classList.replace('nightMood','nightMood-pink')
+        searchButton.classList.replace('search-btn','search-btn-pink')
+        inputSearch.classList.remove('searching')
+        controlsButtons.classList.replace('controls-btns-night','controls-btns-pink')
+        tablePrent.classList.replace('table-night','table-pink')
+        tableHead.classList.replace('thead-night','thead-pink')
+        modalFooter.classList.replace('modal-footer-night','modal-footer-pink')
+        modalBody.classList.replace('modal-body-night','modal-body-pink')
+        formGroup.classList.replace('form-group-night','form-group-pink')
+        addBtn.classList.replace('addBtn-night','addBtn-pink')
+        for(i=0;i<inputs.length;i++){
+            inputs[i].classList.remove('input-night')
+        }
+    }
+      // night mood
+    else{
+        mainBody.classList.replace('body-pink','body')
+        nightMoodButton.innerHTML='<i class="fa-solid fa-moon"></i>'
+        nightMoodButton.classList.replace('nightMood-pink','nightMood')
+        searchButton.classList.replace('search-btn-pink','search-btn')
+        inputSearch.classList.add('searching')
+        controlsButtons.classList.replace('controls-btns-pink','controls-btns-night')
+        tablePrent.classList.replace('table-pink','table-night')
+        tableHead.classList.replace('thead-pink','thead-night')
+        modalFooter.classList.replace('modal-footer-pink','modal-footer-night')
+        modalBody.classList.replace('modal-body-pink','modal-body-night')
+        formGroup.classList.replace('form-group-pink','form-group-night')
+        addBtn.classList.replace('addBtn-pink','addBtn-night')
+        for(i=0;i<inputs.length;i++){
+            inputs[i].classList.add('input-night')
+        }
+
+    }
+
+}
+
+
+nightMoodButton.addEventListener("click",changeBodyColor)
+
+function clearForm(){
+
+    for(var i=0;i<inputs.length;i++){
+        inputs[i].value=null;
+    }
 }
