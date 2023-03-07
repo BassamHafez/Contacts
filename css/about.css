@@ -1,0 +1,208 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ at night moood --------------------------------------------------------------- 
+ */
+.body{
+    background-color:#060818;
+}
+
+.searching{
+    background-color: #1B2E4B;
+    border: none;
+}
+
+.search-btn{
+    color: black;
+    font-weight: 800;
+    background-color: #496081;
+    transition: all 1s;
+    border: none;
+}
+.search-btn:hover{
+    background-color: #C8E2E2; 
+    color: black;
+}
+
+.controls-btns-night button{
+    background-color: #1B2E4B;
+    color: #009688;
+}
+.table-night{
+    border-radius: 0.625rem;
+    overflow: hidden;
+    color: #737475;
+    font-weight: 500;
+    text-align: center;
+    background-color: #0E1726;
+    width: 100%;
+}
+
+.thead-night{
+    color: #BFC9D4;
+    font-size: 1.375rem;
+}
+
+table tbody tr{
+  transition: all 1s;
+}
+
+table tbody tr:hover{
+  cursor: pointer;
+  background-color: #1d2b42;
+}
+.modal-body-night,.modal-footer-night{
+   background-color: #060818; 
+   border: none;
+}
+
+
+.form-group-night{
+    width: 100%;
+    background:transparent;
+    font-family:cursive;
+    border: none;
+}
+.input-night{
+    background-color: #1B2E4B;
+    border: none;
+}
+
+.addBtn-night{
+    background-color:#163c75;
+    color: #aeaeaf;
+    transition: all 1s;
+}
+.addBtn-night:hover{
+    background-color: #91b6ee;
+    color: black;
+}
+
+
+
+/*
+ at sun moood --------------------------------------------------------------- 
+*/
+
+.body-pink{
+    background:linear-gradient(45deg,#8292a7,#90b4b2);
+}
+
+.search-btn-pink{
+    border: solid 0.0625rem #EBCDD0;
+    color: black;
+    font-weight: 800;
+    background-color: #EBCDD0;
+    transition: all 1s;
+}
+.search-btn-pink:hover{
+    background-color: #C8E2E2; 
+    color: black;
+}
+.nightMood-pink{
+    background:linear-gradient(45deg,#e2e1dd,#EA91AA);
+}
+.controls-btns-pink button{
+    background:linear-gradient(#e2e1dd,#EA91AA);
+    color: black;
+}
+
+.table-pink{
+    border-radius: 0.625rem;
+    overflow: hidden;
+    color: black;
+    font-weight: 500;
+    text-align: center;
+    background:linear-gradient(#56aca3,#e2bcc7);
+}
+
+.thead-pink{
+    color: black;
+    font-size: 1.375rem;
+    background:#083636
+}
+
+/*
+ both night and sun ___________________________________
+ */
+
+.main-night-mood{
+ padding: 0.3125rem 0.625rem;
+ background-color: #1B2E4B;   /* night */
+ border-radius:0.3125rem;
+ border: none;
+ font-size: 1.375rem;
+}
+
+#inputSearch{
+    transition: all 1s;
+}
+.controls-btns{
+    padding:0.3125rem 0;
+}
+
+.controls-btns button{
+    padding: 0.3125rem 0.625rem;
+    border-radius:0.3125rem;
+    border: none;
+    font-size: 1.375rem;
+    transition: all .5s;
+}
+.controls-btns button:hover{
+  transform: scale(1.05,1.05);
+  color: white;
+}
+.btn-table{
+    background-color:transparent;
+    color: rgb(95, 93, 93);
+    border: none;
+    font-size: 1.25rem;
+    transition: all .3s;
+}
+.btn-table:hover{
+    color: #009688;
+    transform:scale(1.1,1.1);
+}
+
+
+.modal-body-pink,.modal-footer-pink{
+    background:linear-gradient(135deg,#EBCDD0,white);
+    border:none;
+}
+
+.form-group-pink{
+    width: 100%;
+    color:black;
+    font-weight: 43.75rem;
+    border: none;
+    background-color: transparent;
+} 
+
+ .addBtn-pink{
+    border: solid 0.0625rem #EBCDD0;
+    color: black;
+    font-weight: 800;
+    background-color: #EBCDD0;
+    transition: all 1s;
+}
+.addBtn-pink:hover{
+    background-color: #C8E2E2;
+    color: black;
+}
+
+@media screen and (max-width:800px) {
+    body,html{
+        font-size:13px;
+    }
+    .controls-btns{
+        margin-top: 10px;
+    }
+    table{
+        margin-top:5px;
+    }
+}

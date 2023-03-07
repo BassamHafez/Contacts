@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Data Saver</title>
+    <meta name="description"
+        content=" Beso R us is the leading kids store for all toys, video games, dolls, action figures, learning games, building blocks and more. C'mon, Let's Play">
+    <meta name="keywords" content="Beso shope,Beso,Beso R us ,R us,toys,games,kids">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/linkrel1.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+
+
+<!-- //kkkk -->
+
+<body class="body" id="mainBody">
+        
+            <div class="container-fluid">
+                <div class="row justify-content-between my-5">
+
+                    <div class="col-md-5">
+                        <div class="d-flex justify-content-center">
+                        <button  id="nightMoodButton" class=" main-night-mood nightMood mx-2"><i class="fa-solid fa-moon"></i></button>
+                        <div class="input-group">
+                            <input type="search" class="form-control searching" placeholder="search" id="inputSearch">
+                            <button id="searchButton" class="btn btn-outline-primary search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div id="controlsButtons" class=" controls-btns controls-btns-night col-md-5">
+                        <div class="d-flex justify-content-end pe-3">
+                            <button class="mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user-plus"></i></button>
+                            <button class="mx-2"><i class="fa-solid fa-list"></i></button>
+                            <button class="mx-2"><i class="fa-solid fa-rectangle-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+ 
+                <table id="tableParent" class="table table-night">
+                    <thead id="tableHead" class="thead thead-night">
+                        <tr>
+                            <th scope="row"></th>
+                            <th>Name</th>
+                            <th>Country</th>
+                            <th>Phone</th>
+                            <th><i class="fa-solid fa-trash-can"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+
+                    </tbody>
+                </table>
+
+            </div> 
+
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <!-- modal body -->
+                    <div id="modalBody" class="modal-body modal-body-night">
+
+                        <button id="formGroup" class="form-group-night">
+                        <input type="text" class="form-control input-night mb-3 mt-1" name="Name" id="inputName" aria-describedby="helpId"
+                            placeholder="Enter your name">
+                            <div class="alert alert-danger d-none" id="alertName" role="alert">
+                                start with capital,at-least 2-10 char
+                            </div>
+                        <input type="text" class="form-control input-night mb-3 mt-1 " id="inputCountry" aria-describedby="helpId"
+                            placeholder="Enter your country">
+                            <div class="alert alert-danger d-none " id="alertCountry" role="alert">
+                                start with capital
+                            </div>
+                        <input type="text" class="form-control input-night mb-3 mt-1" name="Name" id="inputPhone"
+                            aria-describedby="helpId" placeholder="Enter your number">
+                            <div class="alert alert-danger d-none" id="alertPhone" role="alert">
+                                invalid Num
+                            </div>
+                    </div> 
+                    <div id="modalFooter" class="modal-footer modal-footer-night">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Discard</button>
+                        <button class="btn addBtn addBtn-night" id="addBtn" disabled>
+                            Add <span class="badge badge-primary"></span>
+                        </button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+        
+
+
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/about.js"></script>
+</body>
+
+</html>
