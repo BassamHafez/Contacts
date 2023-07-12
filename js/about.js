@@ -18,7 +18,7 @@ var tableHead=document.getElementById('tableHead');
 var modalFooter=document.getElementById('modalFooter');
 var modalBody=document.getElementById('modalBody');
 var formGroup=document.getElementById('formGroup');
-
+var discardBtn=document.getElementById('discardBtn');
 
 
 
@@ -35,7 +35,7 @@ addBtn.onclick = function () {
     updateNewData();
   }
   else{  //add
-    creat();
+    create();
   }
     
     display();
@@ -46,7 +46,7 @@ addBtn.onclick = function () {
 }
  
 
-function creat() {
+function create() {
 
     var data = {
         name: inputName.value,
@@ -94,8 +94,8 @@ function filter(){
             <td>${allData[i].name}</td>
             <td>${allData[i].country}</td>
             <td>${allData[i].phone}</td>
-            <td><button onclick="deleteData(${i})" class="btn table-btns">Delete</button></td>
-            <td><button class="btn table-btns" > update</button></td>
+            <td><button onclick="deleteData(${i})" class="btn-table mx-2"><i class="fa-solid fa-user-minus"></i></button> 
+            <button onclick="moveDataToInput(${i})"class="btn-table mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class='fa-solid fa-pen'></i></button></td>
         </tr>`
 }
 
@@ -215,8 +215,12 @@ function clearValidation(){
  
 }
 
-function changeBodyColor(){
-    if(mainBody.classList.contains('body')){
+
+
+
+function changeBodyColor(mood){
+
+    if(mood==="light"){
         // sun mood
         mainBody.classList.replace('body','body-pink')
         nightMoodButton.innerHTML='<i class="fa-solid fa-sun"></i>'
@@ -233,9 +237,11 @@ function changeBodyColor(){
         for(i=0;i<inputs.length;i++){
             inputs[i].classList.remove('input-night')
         }
+
+    
     }
       // night mood
-    else{
+    else if (mood==="dark"){
         mainBody.classList.replace('body-pink','body')
         nightMoodButton.innerHTML='<i class="fa-solid fa-moon"></i>'
         nightMoodButton.classList.replace('nightMood-pink','nightMood')
@@ -256,8 +262,28 @@ function changeBodyColor(){
 
 }
 
+function savingMoodOnLocalStorage(){
+    if(mainBody.classList.contains('body')){
+        localStorage.setItem('mood','light');
+        changeBodyColor("light");
+    }
+    else{
+        localStorage.setItem('mood','dark');
+        changeBodyColor("dark");
+    }
+}
 
-nightMoodButton.addEventListener("click",changeBodyColor)
+nightMoodButton.addEventListener("click",savingMoodOnLocalStorage)
+
+if(localStorage.getItem('mood')=='light'){
+   changeBodyColor('light')
+}
+else if (localStorage.getItem('mood')=='dark'){
+    changeBodyColor('dark')
+}
+
+
+var modalFade=document.getElementById('exampleModal');
 
 function clearForm(){
 
@@ -265,3 +291,14 @@ function clearForm(){
         inputs[i].value=null;
     }
 }
+
+
+function resetForm(){
+    clearForm();
+    addBtn.innerHTML="Add";
+}
+
+
+modalFade.addEventListener('click', resetForm);
+discardBtn.addEventListener('click',resetForm)
+

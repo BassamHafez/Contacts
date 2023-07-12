@@ -70,6 +70,7 @@ table tbody tr:hover{
 .input-night{
     background-color: #1B2E4B;
     border: none;
+    color: #009688;
 }
 
 .addBtn-night{
@@ -81,7 +82,6 @@ table tbody tr:hover{
     background-color: #91b6ee;
     color: black;
 }
-
 
 
 /*
