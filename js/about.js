@@ -21,9 +21,6 @@ var formGroup=document.getElementById('formGroup');
 var discardBtn=document.getElementById('discardBtn');
 
 
-
-
-
 if(JSON.parse(localStorage.getItem("data")) !=null){
 allData=JSON.parse(localStorage.getItem("data"));
 display();
@@ -65,7 +62,7 @@ trs+=   `<tr>
             <td>${allData[i].name}</td>
             <td>${allData[i].country}</td>
             <td>${allData[i].phone}</td>
-            <td><button onclick="deleteData(${i})" class="btn-table mx-2"><i class="fa-solid fa-user-minus"></i></button> 
+            <td><button onclick="deleteData(${i})"  class="btn-table mx-2"><i class="fa-solid fa-user-minus"></i></button> 
             <button onclick="moveDataToInput(${i})"class="btn-table mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class='fa-solid fa-pen'></i></button></td>
         </tr>`
 }
@@ -207,7 +204,6 @@ function clearValidation(){
         inputName.classList.remove("is-invalid");
         inputCountry.classList.remove("is-invalid");
         inputPhone.classList.remove("is-invalid");
-        inputName.classList.remove("is-invalid");
         inputName.classList.remove("is-valid"); 
         inputCountry.classList.remove("is-valid"); 
         inputPhone.classList.remove("is-valid"); 
@@ -222,38 +218,37 @@ function changeBodyColor(mood){
 
     if(mood==="light"){
         // sun mood
-        mainBody.classList.replace('body','body-pink')
+        mainBody.classList.replace('body','body-yellow')
         nightMoodButton.innerHTML='<i class="fa-solid fa-sun"></i>'
-        nightMoodButton.classList.replace('nightMood','nightMood-pink')
-        searchButton.classList.replace('search-btn','search-btn-pink')
+        nightMoodButton.classList.replace('nightMood','nightMood-yellow')
+        searchButton.classList.replace('search-btn','search-btn-yellow')
         inputSearch.classList.remove('searching')
-        controlsButtons.classList.replace('controls-btns-night','controls-btns-pink')
-        tablePrent.classList.replace('table-night','table-pink')
-        tableHead.classList.replace('thead-night','thead-pink')
-        modalFooter.classList.replace('modal-footer-night','modal-footer-pink')
-        modalBody.classList.replace('modal-body-night','modal-body-pink')
-        formGroup.classList.replace('form-group-night','form-group-pink')
-        addBtn.classList.replace('addBtn-night','addBtn-pink')
+        controlsButtons.classList.replace('controls-btns-night','controls-btns-yellow')
+        tablePrent.classList.replace('table-night','table-yellow')
+        tableHead.classList.replace('thead-night','thead-yellow')
+        modalFooter.classList.replace('modal-footer-night','modal-footer-yellow')
+        modalBody.classList.replace('modal-body-night','modal-body-yellow')
+        formGroup.classList.replace('form-group-night','form-group-yellow')
+        addBtn.classList.replace('addBtn-night','addBtn-yellow')
         for(i=0;i<inputs.length;i++){
             inputs[i].classList.remove('input-night')
         }
 
-    
     }
       // night mood
     else if (mood==="dark"){
-        mainBody.classList.replace('body-pink','body')
+        mainBody.classList.replace('body-yellow','body')
         nightMoodButton.innerHTML='<i class="fa-solid fa-moon"></i>'
-        nightMoodButton.classList.replace('nightMood-pink','nightMood')
-        searchButton.classList.replace('search-btn-pink','search-btn')
+        nightMoodButton.classList.replace('nightMood-yellow','nightMood')
+        searchButton.classList.replace('search-btn-yellow','search-btn')
         inputSearch.classList.add('searching')
-        controlsButtons.classList.replace('controls-btns-pink','controls-btns-night')
-        tablePrent.classList.replace('table-pink','table-night')
-        tableHead.classList.replace('thead-pink','thead-night')
-        modalFooter.classList.replace('modal-footer-pink','modal-footer-night')
-        modalBody.classList.replace('modal-body-pink','modal-body-night')
-        formGroup.classList.replace('form-group-pink','form-group-night')
-        addBtn.classList.replace('addBtn-pink','addBtn-night')
+        controlsButtons.classList.replace('controls-btns-yellow','controls-btns-night')
+        tablePrent.classList.replace('table-yellow','table-night')
+        tableHead.classList.replace('thead-yellow','thead-night')
+        modalFooter.classList.replace('modal-footer-yellow','modal-footer-night')
+        modalBody.classList.replace('modal-body-yellow','modal-body-night')
+        formGroup.classList.replace('form-group-yellow','form-group-night')
+        addBtn.classList.replace('addBtn-yellow','addBtn-night')
         for(i=0;i<inputs.length;i++){
             inputs[i].classList.add('input-night')
         }
@@ -283,10 +278,22 @@ else if (localStorage.getItem('mood')=='dark'){
 }
 
 
-var modalFade=document.getElementById('exampleModal');
+
+function hideAlerts(){
+    alertName.classList.add("d-none");
+    alertCountry.classList.add("d-none");
+    alertPhone.classList.add("d-none");
+}
+function hideValidation(){
+    inputName.classList.remove("is-invalid");
+    inputCountry.classList.remove("is-invalid");
+    inputPhone.classList.remove("is-invalid");
+    inputName.classList.remove("is-valid"); 
+    inputCountry.classList.remove("is-valid"); 
+    inputPhone.classList.remove("is-valid");
+}
 
 function clearForm(){
-
     for(var i=0;i<inputs.length;i++){
         inputs[i].value=null;
     }
@@ -295,10 +302,23 @@ function clearForm(){
 
 function resetForm(){
     clearForm();
-    addBtn.innerHTML="Add";
+    hideAlerts();
+    hideValidation();
+    addBtn.innerHTML="Add"; 
 }
 
+var modalFade=document.getElementById('exampleModal');
+var modalContent = document.getElementById('modalContent');
 
-modalFade.addEventListener('click', resetForm);
+modalFade.addEventListener('click', function(e){
+    if(e.target==this){
+        resetForm()
+    }
+});
+
+modalContent.addEventListener('click', function(e){
+    e.stopPropagation();
+    });
+
 discardBtn.addEventListener('click',resetForm)
 

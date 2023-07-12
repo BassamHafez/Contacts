@@ -5,6 +5,17 @@
     padding: 0;
 }
 
+.btn-table{
+    background-color:transparent;
+    color: rgb(95, 93, 93);
+    border: none;
+    font-size: 1.25rem;
+    transition: all .3s;
+}
+.btn-table:hover{
+    transform:scale(1.1,1.1);
+}
+
 /*
  at night moood --------------------------------------------------------------- 
  */
@@ -52,10 +63,15 @@ table tbody tr{
   transition: all 1s;
 }
 
-table tbody tr:hover{
+.table-night tbody tr:hover{
   cursor: pointer;
-  background-color: #1d2b42;
+  background-color: rgba(13, 163, 163, 0.5);
 }
+.table-night tbody tr td button:hover{
+    color: #009688;
+}
+
+
 .modal-body-night,.modal-footer-night{
    background-color: #060818; 
    border: none;
@@ -88,59 +104,61 @@ table tbody tr:hover{
  at sun moood --------------------------------------------------------------- 
 */
 
-.body-pink{
-    background:#d1d1e2;
+.body-yellow{
+    background-color:#FFFAFA;
 }
 
-.search-btn-pink{
-    border: solid 0.0625rem #EBCDD0;
+.search-btn-yellow{
+    border: solid 0.0625rem rgb(221, 221, 8);
     color: black;
     font-weight: 800;
-    background-color: #EBCDD0;
+    background-color: rgb(221, 221, 8);
     transition: all 1s;
 }
-.search-btn-pink:hover{
-    background-color: #C8E2E2; 
-    color: black;
+.search-btn-yellow:hover{
+    background-color: black; 
+    color: rgb(221, 221, 8);
 }
-.nightMood-pink{
-    background:linear-gradient(45deg,#e2e1dd,#EA91AA);
+.nightMood-yellow{
+    background-color: rgb(221, 221, 8);
     padding: 0.3125rem 0.625rem;
     border-radius:0.3125rem;
     border: none;
     font-size: 1.375rem;
     color: rgb(34, 34, 34);
 }
-.controls-btns-pink button{
-    background:linear-gradient(#e2e1dd,#EA91AA);
-    color: rgb(46, 45, 45);
+.controls-btns-yellow button{
+    background-color: rgb(221, 221, 8);
+    color: black;
 }
-.controls-btns-pink button:hover{
-    background:#009688;
+.controls-btns-yellow button:hover{
+    background-color: black; 
+    color: rgb(221, 221, 8) !important;
 }
 
-.table-pink{
+.table-yellow{
     border-radius: 0.625rem;
     overflow: hidden;
     color: black;
     font-weight: 500;
     text-align: center;
-    background-color: #87d3ca;
+    background-color:white;
+    box-shadow: 0 2px 10px black;
 }
 
-.thead-pink{
+.thead-yellow{
     color: black;
     font-size: 1.375rem;
-    background:#6cafaf;
+    background:rgb(221, 221, 8);
     opacity:.8;
 }
 
-.modal-body-pink,.modal-footer-pink{
-    background:linear-gradient(135deg,#EBCDD0,white);
+.modal-body-yellow{
+    background:linear-gradient(135deg,yellow 15%,white 15%);
     border:none;
 }
 
-.form-group-pink{
+.form-group-yellow{
     width: 100%;
     color:black;
     font-weight: 43.75rem;
@@ -148,15 +166,23 @@ table tbody tr:hover{
     background-color: transparent;
 } 
 
- .addBtn-pink{
-    border: solid 0.0625rem #EBCDD0;
+ .addBtn-yellow{
+    border: solid 0.0625rem rgb(221, 221, 8);
     color: black;
     font-weight: 800;
-    background-color: #EBCDD0;
+    background-color: rgb(221, 221, 8);
     transition: all 1s;
 }
-.addBtn-pink:hover{
+.addBtn-yellow:hover{
     background-color: #C8E2E2;
+    color: black;
+}
+
+.table-yellow tbody tr:hover{
+    cursor: pointer;
+    background-color: #ffd700;
+  }
+  .table-yellow tbody tr td button:hover{
     color: black;
 }
 
@@ -190,17 +216,6 @@ table tbody tr:hover{
 .controls-btns button:hover{
   transform: scale(1.05,1.05);
   color: white;
-}
-.btn-table{
-    background-color:transparent;
-    color: rgb(95, 93, 93);
-    border: none;
-    font-size: 1.25rem;
-    transition: all .3s;
-}
-.btn-table:hover{
-    color: #009688;
-    transform:scale(1.1,1.1);
 }
 
 
