@@ -219,7 +219,7 @@ function changeBodyColor(mood){
     if(mood==="light"){
         // sun mood
         mainBody.classList.replace('body','body-yellow')
-        nightMoodButton.innerHTML='<i class="fa-solid fa-sun"></i>'
+        nightMoodButton.innerHTML='<i class="fa-regular fa-sun"></i>'
         nightMoodButton.classList.replace('nightMood','nightMood-yellow')
         searchButton.classList.replace('search-btn','search-btn-yellow')
         inputSearch.classList.remove('searching')
